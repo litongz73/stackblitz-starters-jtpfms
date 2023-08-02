@@ -1,0 +1,13 @@
+.example-section {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.example-margin {
+  width: 90%;
+}
+
+.selected {
+  padding-left: 30px;
+}
