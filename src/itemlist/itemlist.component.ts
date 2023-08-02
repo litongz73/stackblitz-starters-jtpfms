@@ -1,13 +1,14 @@
 import { NgFor, NgIf } from '@angular/common';
 import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import { MatCheckboxModule } from '@angular/material/checkbox';
+import { MatButtonModule } from '@angular/material/button';
 
 @Component({
   selector: 'app-itemlist',
   templateUrl: './itemlist.component.html',
   styleUrls: ['./itemlist.component.css'],
   standalone: true,
-  imports: [MatCheckboxModule, NgFor, NgIf],
+  imports: [MatCheckboxModule, MatButtonModule, NgFor, NgIf],
 })
 export class ItemlistComponent implements OnInit {
   constructor() {}
@@ -52,5 +53,10 @@ export class ItemlistComponent implements OnInit {
     else this.itemlist.forEach((each) => (each.checked = true));
 
     this.allChecked = !this.allChecked;
+  }
+
+  clearAll() {
+    this.itemlist.forEach((each) => (each.checked = false));
+    this.allChecked = false;
   }
 }
